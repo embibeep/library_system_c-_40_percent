@@ -1,0 +1,17 @@
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\bin\Debug\He_thong_quan_ly_thu_vien.exe.config
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\bin\Debug\He_thong_quan_ly_thu_vien.exe
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\bin\Debug\He_thong_quan_ly_thu_vien.pdb
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.csproj.AssemblyReference.cache
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.Form_Login.resources
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.Properties.Resources.resources
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.csproj.GenerateResource.cache
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.csproj.CoreCompileInputs.cache
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.exe
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.pdb
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.Form_Menu.resources
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.Form_TheLoai.resources
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.Form_DSSach.resources
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.Form_DocGia.resources
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.Form_PhieuMuon.resources
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.Form_XemDS.resources
+E:\nam3\sql\bai 40%\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.Form_XemPM.resources

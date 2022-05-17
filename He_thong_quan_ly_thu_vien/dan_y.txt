@@ -1,0 +1,9 @@
+Tạo các form:
+-Login
+-Menu
+-Nhập Thể Loại
+-Nhập Sách (có cha con với Thể Loại)
+-Xem Sách (có cha con với Thể Loại)
+-Nhập Độc Giả
+-Phiếu Mượn (có cha con với Độc giả)
+-Xem Phiếu Mượn (có cha con với Độc giả).
