@@ -16,7 +16,7 @@ namespace He_thong_quan_ly_thu_vien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Login());
+            Application.Run(new Form_Menu());
         }
     }
 }

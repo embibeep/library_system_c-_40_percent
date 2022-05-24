@@ -40,7 +40,7 @@ namespace He_thong_quan_ly_thu_vien
             this.dgv_TheLoai_Enter = new System.Windows.Forms.DataGridView();
             this.btn_TheLoai_Add = new System.Windows.Forms.Button();
             this.btn_TheLoai_Update = new System.Windows.Forms.Button();
-            this.btn_theLoai_Deete = new System.Windows.Forms.Button();
+            this.btn_theLoai_Delete = new System.Windows.Forms.Button();
             this.btn_TheLoai_Exit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TheLoai_Enter)).BeginInit();
             this.SuspendLayout();
@@ -126,6 +126,7 @@ namespace He_thong_quan_ly_thu_vien
             this.dgv_TheLoai_Enter.RowTemplate.Height = 24;
             this.dgv_TheLoai_Enter.Size = new System.Drawing.Size(1119, 420);
             this.dgv_TheLoai_Enter.TabIndex = 12;
+            this.dgv_TheLoai_Enter.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TheLoai_Enter_CellClick);
             // 
             // btn_TheLoai_Add
             // 
@@ -136,6 +137,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_TheLoai_Add.TabIndex = 5;
             this.btn_TheLoai_Add.Text = "Thêm";
             this.btn_TheLoai_Add.UseVisualStyleBackColor = true;
+            this.btn_TheLoai_Add.Click += new System.EventHandler(this.btn_TheLoai_Add_Click);
             // 
             // btn_TheLoai_Update
             // 
@@ -146,16 +148,18 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_TheLoai_Update.TabIndex = 6;
             this.btn_TheLoai_Update.Text = "Cập Nhật";
             this.btn_TheLoai_Update.UseVisualStyleBackColor = true;
+            this.btn_TheLoai_Update.Click += new System.EventHandler(this.btn_TheLoai_Update_Click);
             // 
-            // btn_theLoai_Deete
+            // btn_theLoai_Delete
             // 
-            this.btn_theLoai_Deete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_theLoai_Deete.Location = new System.Drawing.Point(635, 625);
-            this.btn_theLoai_Deete.Name = "btn_theLoai_Deete";
-            this.btn_theLoai_Deete.Size = new System.Drawing.Size(182, 44);
-            this.btn_theLoai_Deete.TabIndex = 7;
-            this.btn_theLoai_Deete.Text = "Xóa";
-            this.btn_theLoai_Deete.UseVisualStyleBackColor = true;
+            this.btn_theLoai_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_theLoai_Delete.Location = new System.Drawing.Point(635, 625);
+            this.btn_theLoai_Delete.Name = "btn_theLoai_Delete";
+            this.btn_theLoai_Delete.Size = new System.Drawing.Size(182, 44);
+            this.btn_theLoai_Delete.TabIndex = 7;
+            this.btn_theLoai_Delete.Text = "Xóa";
+            this.btn_theLoai_Delete.UseVisualStyleBackColor = true;
+            this.btn_theLoai_Delete.Click += new System.EventHandler(this.btn_theLoai_Delete_Click);
             // 
             // btn_TheLoai_Exit
             // 
@@ -175,7 +179,7 @@ namespace He_thong_quan_ly_thu_vien
             this.ClientSize = new System.Drawing.Size(1196, 703);
             this.ControlBox = false;
             this.Controls.Add(this.btn_TheLoai_Exit);
-            this.Controls.Add(this.btn_theLoai_Deete);
+            this.Controls.Add(this.btn_theLoai_Delete);
             this.Controls.Add(this.btn_TheLoai_Update);
             this.Controls.Add(this.btn_TheLoai_Add);
             this.Controls.Add(this.dgv_TheLoai_Enter);
@@ -192,6 +196,7 @@ namespace He_thong_quan_ly_thu_vien
             this.Name = "Form_TheLoai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "THỂ LOẠI";
+            this.Load += new System.EventHandler(this.Form_TheLoai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TheLoai_Enter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,7 +216,7 @@ namespace He_thong_quan_ly_thu_vien
         private System.Windows.Forms.DataGridView dgv_TheLoai_Enter;
         private System.Windows.Forms.Button btn_TheLoai_Add;
         private System.Windows.Forms.Button btn_TheLoai_Update;
-        private System.Windows.Forms.Button btn_theLoai_Deete;
+        private System.Windows.Forms.Button btn_theLoai_Delete;
         private System.Windows.Forms.Button btn_TheLoai_Exit;
     }
 }

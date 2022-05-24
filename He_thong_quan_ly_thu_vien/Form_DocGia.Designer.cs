@@ -69,6 +69,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_DocGia_Delete.TabIndex = 9;
             this.btn_DocGia_Delete.Text = "Xóa";
             this.btn_DocGia_Delete.UseVisualStyleBackColor = true;
+            this.btn_DocGia_Delete.Click += new System.EventHandler(this.btn_DocGia_Delete_Click);
             // 
             // btn_DocGia_Update
             // 
@@ -79,6 +80,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_DocGia_Update.TabIndex = 8;
             this.btn_DocGia_Update.Text = "Cập nhật";
             this.btn_DocGia_Update.UseVisualStyleBackColor = true;
+            this.btn_DocGia_Update.Click += new System.EventHandler(this.btn_DocGia_Update_Click);
             // 
             // txt_NgayLapDG_Enter
             // 
@@ -125,6 +127,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_DocGia_Add.TabIndex = 7;
             this.btn_DocGia_Add.Text = "Thêm";
             this.btn_DocGia_Add.UseVisualStyleBackColor = true;
+            this.btn_DocGia_Add.Click += new System.EventHandler(this.btn_DocGia_Add_Click);
             // 
             // dgv_DocGia_Enter
             // 
@@ -135,6 +138,7 @@ namespace He_thong_quan_ly_thu_vien
             this.dgv_DocGia_Enter.RowTemplate.Height = 24;
             this.dgv_DocGia_Enter.Size = new System.Drawing.Size(1119, 420);
             this.dgv_DocGia_Enter.TabIndex = 48;
+            this.dgv_DocGia_Enter.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DocGia_Enter_CellClick);
             // 
             // txt_SdtDG_Enter
             // 
@@ -236,6 +240,7 @@ namespace He_thong_quan_ly_thu_vien
             this.Name = "Form_DocGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐỘC GIẢ";
+            this.Load += new System.EventHandler(this.Form_DocGia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DocGia_Enter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
