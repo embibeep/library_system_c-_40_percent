@@ -29,8 +29,8 @@ namespace He_thong_quan_ly_thu_vien
             {
                 try
                 {
-                    connectionstring = "Server=.";
-                    connectionstring += ";database=19CT3_42_D10";
+                    connectionstring = @"Server=ADMIN\SQLEXPRESS";
+                    connectionstring += @";database=19CT3_42_D10";
                     connectionstring += ";uid=" + txt_Login_Account.Text;
                     connectionstring += ";pwd=" + txt_Login_Password.Text;
                     cnn.ConnectionString = connectionstring;

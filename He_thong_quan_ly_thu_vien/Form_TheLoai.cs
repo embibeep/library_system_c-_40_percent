@@ -36,14 +36,18 @@ namespace He_thong_quan_ly_thu_vien
         BindingSource binding = new BindingSource();
         SqlCommandBuilder cmb;
         private SqlConnection cnn;
+        DataSet ds;
         private void Connection()
         {
-            SqlConnection Connection = new SqlConnection("server=.;database=19CT3_42_D10;integrated security=true");
+            //dgv_TheLoai_Enter.Rows.Clear();
+            SqlConnection Connection = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
             cmd = new SqlCommand("Select * From TheLoai", Connection);
             da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            binding.DataSource = dt;
-            dgv_TheLoai_Enter.DataSource = binding;
+            cmb = new SqlCommandBuilder(da);
+            ds = new DataSet();
+            da.Fill(ds, "Theloai");
+            dgv_TheLoai_Enter.DataSource = ds;
+            dgv_TheLoai_Enter.DataMember = "TheLoai";
         }
 
         private void dgv_TheLoai_Enter_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -61,66 +65,56 @@ namespace He_thong_quan_ly_thu_vien
 
         private void btn_TheLoai_Add_Click(object sender, EventArgs e)
         {
-            try
+            //try
             {
-                SqlConnection Connection = new SqlConnection("server=.;database=19CT3_42_D10;integrated security=true");
+                SqlConnection Connection1 = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
                 string Scon;
-                Connection.Open();
-                Scon = "insert into TheLoai values(@MaTL.@TenTL,@MoTa,@GhiChu)";
-                SqlCommand cmd1 = new SqlCommand(Scon, Connection);
-                cmd.Parameters.Add("@MaTL", SqlDbType.Int).Value = int.Parse(txt_MaTL_Enter.Text);
-                cmd.Parameters.Add("@TenTL", SqlDbType.Int).Value = int.Parse(txt_TenTL_Enter.Text);
-                cmd.Parameters.Add("@MoTa", SqlDbType.Int).Value = int.Parse(txt_MoTa_Enter.Text);
-                cmd.Parameters.Add("@GhiChu", SqlDbType.Float).Value = float.Parse(txt_GhiChu_Enter.Text);
+                Connection1.Open();
+                Scon = "insert into TheLoai (MaTL,TenTL,MoTa,GhiChu) values(@MaTL,@TenTL,@MoTa,@GhiChu)";
+                SqlCommand cmd1 = new SqlCommand(Scon, Connection1);
+                cmd1.Parameters.Add("@MaTL", txt_MaTL_Enter.Text);
+                cmd1.Parameters.Add("@TenTL", txt_TenTL_Enter.Text);
+                cmd1.Parameters.Add("@MoTa",  txt_MoTa_Enter.Text);
+                cmd1.Parameters.Add("@GhiChu", txt_GhiChu_Enter.Text);
                 int count = cmd1.ExecuteNonQuery();
                 {
                     MessageBox.Show("Thêm thành công!");
+                    
+                    Connection();
                 }
-                Connection.Close();
+                Connection1.Close();
             }
-            catch (Exception Exception)
-            {
-                MessageBox.Show("Chưa thêm thành công!");
-            }
+            //catch (Exception Exception)
+            //{
+            //    MessageBox.Show("Chưa thêm thành công!");
+            //}
         }
 
         private void btn_TheLoai_Update_Click(object sender, EventArgs e)
         {
             DataTable tbl = new DataTable();
-            tbl = dt.GetChanges();
+            tbl = ds.Tables["Theloai"].GetChanges();
             if (tbl == null)
             {
                 MessageBox.Show("Cập nhật thất bại!");
             }
             else
-            {
-                cmb = new SqlCommandBuilder(da);
-                da.Update(dt);
+            {         
+                da.Update(ds,"TheLoai");
                 MessageBox.Show("Có" + tbl.Rows.Count + " danh sách đã được cập nhật!");
             }
         }
 
         private void btn_theLoai_Delete_Click(object sender, EventArgs e)
         {
-            SqlConnection Connection = new SqlConnection("server=.;database=19CT3_42_D10;integrated security=true");
-            string SCon;
-            SCon = "Delete From TheLoai Where MaTL = @MaTL";
-            SqlCommand cmd1 = new SqlCommand(SCon, Connection);
-            Connection.Open();
-            cmd1.Parameters.Add("@MaTL", SqlDbType.NVarChar).Value = txt_MaTL_Enter.Text;
-            int count = cmd1.ExecuteNonQuery();
-            if (count > 0)
-            {
-                DataRowView row = (DataRowView)binding.Current;
-                row.Delete();
-                MessageBox.Show("Xóa thành công!");
-            }
-            Connection.Close();
+            int hientai = this.BindingContext[ds, "Theloai"].Position;
+            this.BindingContext[ds, "Theloai"].RemoveAt(hientai);
         }
 
         private void btn_TheLoai_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        
     }
 }

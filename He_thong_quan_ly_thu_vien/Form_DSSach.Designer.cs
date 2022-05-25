@@ -62,6 +62,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_DSSach_Add.TabIndex = 7;
             this.btn_DSSach_Add.Text = "Thêm";
             this.btn_DSSach_Add.UseVisualStyleBackColor = true;
+            this.btn_DSSach_Add.Click += new System.EventHandler(this.btn_DSSach_Add_Click);
             // 
             // dgv_DSSach_Enter
             // 
@@ -72,6 +73,7 @@ namespace He_thong_quan_ly_thu_vien
             this.dgv_DSSach_Enter.RowTemplate.Height = 24;
             this.dgv_DSSach_Enter.Size = new System.Drawing.Size(1119, 420);
             this.dgv_DSSach_Enter.TabIndex = 25;
+            this.dgv_DSSach_Enter.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSSach_Enter_CellClick);
             // 
             // txt_NgayLap_Enter
             // 
@@ -190,6 +192,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_DSSach_Update.TabIndex = 8;
             this.btn_DSSach_Update.Text = "Cập nhật";
             this.btn_DSSach_Update.UseVisualStyleBackColor = true;
+            this.btn_DSSach_Update.Click += new System.EventHandler(this.btn_DSSach_Update_Click);
             // 
             // btn_DSSach_Delete
             // 
@@ -200,6 +203,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_DSSach_Delete.TabIndex = 9;
             this.btn_DSSach_Delete.Text = "Xóa";
             this.btn_DSSach_Delete.UseVisualStyleBackColor = true;
+            this.btn_DSSach_Delete.Click += new System.EventHandler(this.btn_DSSach_Delete_Click);
             // 
             // btn_DSSach_Watch
             // 
@@ -221,6 +225,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_DSSach_Report.TabIndex = 11;
             this.btn_DSSach_Report.Text = "In";
             this.btn_DSSach_Report.UseVisualStyleBackColor = true;
+            this.btn_DSSach_Report.Click += new System.EventHandler(this.btn_DSSach_Report_Click);
             // 
             // btn_DSSach_Exit
             // 
@@ -241,6 +246,7 @@ namespace He_thong_quan_ly_thu_vien
             this.cbo_TheLoai_Choose.Name = "cbo_TheLoai_Choose";
             this.cbo_TheLoai_Choose.Size = new System.Drawing.Size(530, 39);
             this.cbo_TheLoai_Choose.TabIndex = 30;
+            this.cbo_TheLoai_Choose.SelectedIndexChanged += new System.EventHandler(this.cbo_TheLoai_Choose_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -284,6 +290,7 @@ namespace He_thong_quan_ly_thu_vien
             this.Name = "Form_DSSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DANH SÁCH SÁCH";
+            this.Load += new System.EventHandler(this.Form_DSSach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSSach_Enter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

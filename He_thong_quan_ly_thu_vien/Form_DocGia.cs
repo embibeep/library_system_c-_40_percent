@@ -29,14 +29,18 @@ namespace He_thong_quan_ly_thu_vien
         BindingSource binding = new BindingSource();
         SqlCommandBuilder cmb;
         private SqlConnection cnn;
+        DataSet ds;
         private void Connection()
         {
-            SqlConnection Connection = new SqlConnection("server=.;database=19CT3_42_D10;integrated security=true");
+            //dgv_DocGia_Enter.Rows.Clear();
+            SqlConnection Connection = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
             cmd = new SqlCommand("Select * From DocGia", Connection);
             da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            binding.DataSource = dt;
-            dgv_DocGia_Enter.DataSource = binding;
+            cmb = new SqlCommandBuilder(da);
+            ds = new DataSet();
+            da.Fill(ds, "Docgia");
+            dgv_DocGia_Enter.DataSource = ds;
+            dgv_DocGia_Enter.DataMember = "DocGia";
         }
 
         private void dgv_DocGia_Enter_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -58,22 +62,23 @@ namespace He_thong_quan_ly_thu_vien
         {
             try
             {
-                SqlConnection Connection = new SqlConnection("server=.;database=19CT3_42_D10;integrated security=true");
+                SqlConnection Connection1 = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
                 string Scon;
-                Connection.Open();
-                Scon = "insert into DocGia values(@MaDG.@TenDG,@EmailDG,@DiaChiDG,@SdtDG,@NgayLap)";
-                SqlCommand cmd1 = new SqlCommand(Scon, Connection);
-                cmd.Parameters.Add("@MaDG", SqlDbType.Int).Value = int.Parse(txt_MaDG_Enter.Text);
-                cmd.Parameters.Add("@TenDG", SqlDbType.Int).Value = int.Parse(txt_TenDG_Enter.Text);
-                cmd.Parameters.Add("@EmailDG", SqlDbType.Int).Value = int.Parse(txt_EmailDG_Enter.Text);
-                cmd.Parameters.Add("@DiaChiDG", SqlDbType.Float).Value = float.Parse(txt_DiaChiDG_Enter.Text);
-                cmd.Parameters.Add("@SdtDG", SqlDbType.Float).Value = float.Parse(txt_SdtDG_Enter.Text);
-                cmd.Parameters.Add("@NgayLap", SqlDbType.Float).Value = float.Parse(txt_NgayLapDG_Enter.Text);
+                Connection1.Open();
+                Scon = "insert into DocGia (MaDG,TenDG,EmailDG,DiaChiDG,SdtDG,NgayLap) values(@MaDG,@TenDG,@EmailDG,@DiaChiDG,@SdtDG,@NgayLap)";
+                SqlCommand cmd1 = new SqlCommand(Scon, Connection1);
+                cmd1.Parameters.Add("@MaDG", txt_MaDG_Enter.Text);
+                cmd1.Parameters.Add("@TenDG", txt_TenDG_Enter.Text);
+                cmd1.Parameters.Add("@EmailDG", txt_EmailDG_Enter.Text);
+                cmd1.Parameters.Add("@DiaChiDG", txt_DiaChiDG_Enter.Text);
+                cmd1.Parameters.Add("@SdtDG", txt_SdtDG_Enter.Text);
+                cmd1.Parameters.Add("@NgayLap", txt_NgayLapDG_Enter.Text);
                 int count = cmd1.ExecuteNonQuery();
                 {
                     MessageBox.Show("Thêm thành công!");
+                    Connection();
                 }
-                Connection.Close();
+                Connection1.Close();
             }
             catch (Exception Exception)
             {
@@ -85,35 +90,22 @@ namespace He_thong_quan_ly_thu_vien
         {
 
             DataTable tbl = new DataTable();
-            tbl = dt.GetChanges();
+            tbl = ds.Tables["Docgia"].GetChanges();
             if (tbl == null)
             {
                 MessageBox.Show("Cập nhật thất bại!");
             }
             else
             {
-                cmb = new SqlCommandBuilder(da);
-                da.Update(dt);
+                da.Update(ds, "DocGia");
                 MessageBox.Show("Có" + tbl.Rows.Count + " danh sách đã được cập nhật!");
             }
         }
 
         private void btn_DocGia_Delete_Click(object sender, EventArgs e)
         {
-            SqlConnection Connection = new SqlConnection("server=.;database=19CT3_42_D10;integrated security=true");
-            string SCon;
-            SCon = "Delete From DocGia Where MaDG = @MaDG";
-            SqlCommand cmd1 = new SqlCommand(SCon, Connection);
-            Connection.Open();
-            cmd1.Parameters.Add("@MaDG", SqlDbType.NVarChar).Value = txt_MaDG_Enter.Text;
-            int count = cmd1.ExecuteNonQuery();
-            if (count > 0)
-            {
-                DataRowView row = (DataRowView)binding.Current;
-                row.Delete();
-                MessageBox.Show("Xóa thành công!");
-            }
-            Connection.Close();
+            int hientai = this.BindingContext[ds, "Docgia"].Position;
+            this.BindingContext[ds, "Docgia"].RemoveAt(hientai);
         }
 
         private void btn_DocGia_Exit_Click(object sender, EventArgs e)
