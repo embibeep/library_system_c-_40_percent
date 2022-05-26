@@ -30,7 +30,6 @@ namespace He_thong_quan_ly_thu_vien
         private void InitializeComponent()
         {
             this.btn_XemDS_Exit = new System.Windows.Forms.Button();
-            this.btn_XemDS_Report = new System.Windows.Forms.Button();
             this.btn_XemDS_Enter = new System.Windows.Forms.Button();
             this.cbo_TheLoai_Choose = new System.Windows.Forms.ComboBox();
             this.txt_MaTL_Watch = new System.Windows.Forms.TextBox();
@@ -54,30 +53,20 @@ namespace He_thong_quan_ly_thu_vien
             // btn_XemDS_Exit
             // 
             this.btn_XemDS_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XemDS_Exit.Location = new System.Drawing.Point(926, 649);
+            this.btn_XemDS_Exit.Location = new System.Drawing.Point(619, 649);
             this.btn_XemDS_Exit.Name = "btn_XemDS_Exit";
-            this.btn_XemDS_Exit.Size = new System.Drawing.Size(236, 44);
+            this.btn_XemDS_Exit.Size = new System.Drawing.Size(543, 44);
             this.btn_XemDS_Exit.TabIndex = 43;
             this.btn_XemDS_Exit.Text = "Thoát";
             this.btn_XemDS_Exit.UseVisualStyleBackColor = true;
             this.btn_XemDS_Exit.Click += new System.EventHandler(this.btn_XemDS_Exit_Click);
-            // 
-            // btn_XemDS_Report
-            // 
-            this.btn_XemDS_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XemDS_Report.Location = new System.Drawing.Point(485, 649);
-            this.btn_XemDS_Report.Name = "btn_XemDS_Report";
-            this.btn_XemDS_Report.Size = new System.Drawing.Size(236, 44);
-            this.btn_XemDS_Report.TabIndex = 42;
-            this.btn_XemDS_Report.Text = "In";
-            this.btn_XemDS_Report.UseVisualStyleBackColor = true;
             // 
             // btn_XemDS_Enter
             // 
             this.btn_XemDS_Enter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_XemDS_Enter.Location = new System.Drawing.Point(44, 649);
             this.btn_XemDS_Enter.Name = "btn_XemDS_Enter";
-            this.btn_XemDS_Enter.Size = new System.Drawing.Size(236, 44);
+            this.btn_XemDS_Enter.Size = new System.Drawing.Size(533, 44);
             this.btn_XemDS_Enter.TabIndex = 41;
             this.btn_XemDS_Enter.Text = "Nhập";
             this.btn_XemDS_Enter.UseVisualStyleBackColor = true;
@@ -137,6 +126,7 @@ namespace He_thong_quan_ly_thu_vien
             this.dgv_XemDS_Enter.RowTemplate.Height = 24;
             this.dgv_XemDS_Enter.Size = new System.Drawing.Size(1119, 420);
             this.dgv_XemDS_Enter.TabIndex = 48;
+            this.dgv_XemDS_Enter.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_XemDS_Enter_CellClick);
             // 
             // txt_NgayLap_Watch
             // 
@@ -237,7 +227,6 @@ namespace He_thong_quan_ly_thu_vien
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.btn_XemDS_Exit);
-            this.Controls.Add(this.btn_XemDS_Report);
             this.Controls.Add(this.btn_XemDS_Enter);
             this.Controls.Add(this.cbo_TheLoai_Choose);
             this.Controls.Add(this.txt_MaTL_Watch);
@@ -258,6 +247,7 @@ namespace He_thong_quan_ly_thu_vien
             this.Name = "Form_XemDS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XEM DANH SÁCH";
+            this.Load += new System.EventHandler(this.Form_XemDS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_XemDS_Enter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -267,7 +257,6 @@ namespace He_thong_quan_ly_thu_vien
         #endregion
 
         private System.Windows.Forms.Button btn_XemDS_Exit;
-        private System.Windows.Forms.Button btn_XemDS_Report;
         private System.Windows.Forms.Button btn_XemDS_Enter;
         private System.Windows.Forms.ComboBox cbo_TheLoai_Choose;
         private System.Windows.Forms.TextBox txt_MaTL_Watch;

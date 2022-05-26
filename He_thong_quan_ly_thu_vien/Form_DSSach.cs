@@ -21,6 +21,7 @@ namespace He_thong_quan_ly_thu_vien
         DataTable tb;
         DataTable Sach;
         SqlDataAdapter da;
+        SqlCommandBuilder buider;
         public static SqlConnection Connection()
         {
             SqlConnection Connection = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
@@ -42,13 +43,16 @@ namespace He_thong_quan_ly_thu_vien
         }
         private void ketnoi() {
             SqlCommand cmd = new SqlCommand("select * from TheLoai", Connection());
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da = new SqlDataAdapter(cmd);
+       
             ds = new DataSet();
             da.Fill(ds, "Theloai");
             cmd.CommandText = "select * from Sach";
             da.Fill(ds, "Sach");
+            buider = new SqlCommandBuilder(da);
             DataTable Cha = ds.Tables["Theloai"];
             DataTable Con = ds.Tables["Sach"];
+      
             DataRelation Rl = new DataRelation("Theloai_Sach", Cha.Columns["MaTL"], Con.Columns["MaTL"]);
             ds.Relations.Add(Rl);
 
@@ -81,9 +85,8 @@ namespace He_thong_quan_ly_thu_vien
                 SqlConnection Connection1 = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
                 string Scon;
                 Connection1.Open();
-                Scon = "insert into Sach (MaSach,TenSach,MoTa,Gia,NgayLap,MaTL) values(@MaSach,@TenSach,@MoTa,@Gia,@NgayLap,@MaTL)";
+                Scon = "insert into Sach (TenSach,MoTa,Gia,NgayLap,MaTL) values(@TenSach,@MoTa,@Gia,@NgayLap,@MaTL)";
                 SqlCommand cmd1 = new SqlCommand(Scon, Connection1);
-                cmd1.Parameters.Add("@MaSach", txt_MaSach_Enter.Text);
                 cmd1.Parameters.Add("@TenSach", txt_TenSach_Enter.Text);
                 cmd1.Parameters.Add("@MoTa", txt_MoTa_Enter.Text);
                 cmd1.Parameters.Add("@Gia", txt_Gia_Enter.Text);
@@ -109,7 +112,7 @@ namespace He_thong_quan_ly_thu_vien
             if (index >= 0)
             {
                 //các thuộc tính trong ngoặc vuông có thể thay đổi tùy theo tên biến trong database.
-                txt_MaSach_Enter.Text = dgv_DSSach_Enter.CurrentRow.Cells["MaSach"].Value.ToString();
+                txt_MaSach_Enter.Text = dgv_DSSach_Enter.CurrentRow.Cells["IDSach"].Value.ToString();
                 txt_TenSach_Enter.Text = dgv_DSSach_Enter.CurrentRow.Cells["TenSach"].Value.ToString();
                 txt_MoTa_Enter.Text = dgv_DSSach_Enter.CurrentRow.Cells["MoTa"].Value.ToString();
                 txt_Gia_Enter.Text = dgv_DSSach_Enter.CurrentRow.Cells["Gia"].Value.ToString();
@@ -128,15 +131,10 @@ namespace He_thong_quan_ly_thu_vien
             }
             else
             {
+
                 da.Update(ds, "Sach");
                 MessageBox.Show("Có" + tbl.Rows.Count + " danh sách đã được cập nhật!");
             }
-        }
-
-        private void btn_DSSach_Report_Click(object sender, EventArgs e)
-        {
-            Form_Report_Sach frm_Report_Sach = new Form_Report_Sach();
-            frm_Report_Sach.ShowDialog();
         }
     }
 }

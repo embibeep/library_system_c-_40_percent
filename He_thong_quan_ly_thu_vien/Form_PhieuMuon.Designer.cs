@@ -34,8 +34,6 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_PM_Watch = new System.Windows.Forms.Button();
             this.btn_PM_Delete = new System.Windows.Forms.Button();
             this.btn_PM_Update = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbo_DocGia_Choose = new System.Windows.Forms.ComboBox();
             this.txt_GhiChuPM_Enter = new System.Windows.Forms.TextBox();
             this.txt_TenSach_Enter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -95,6 +93,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_PM_Delete.TabIndex = 40;
             this.btn_PM_Delete.Text = "Xóa";
             this.btn_PM_Delete.UseVisualStyleBackColor = true;
+            this.btn_PM_Delete.Click += new System.EventHandler(this.btn_PM_Delete_Click);
             // 
             // btn_PM_Update
             // 
@@ -105,25 +104,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_PM_Update.TabIndex = 39;
             this.btn_PM_Update.Text = "Cập nhật";
             this.btn_PM_Update.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(397, 164);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(192, 32);
-            this.label7.TabIndex = 52;
-            this.label7.Text = "Chọn Độc Giả";
-            // 
-            // cbo_DocGia_Choose
-            // 
-            this.cbo_DocGia_Choose.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_DocGia_Choose.FormattingEnabled = true;
-            this.cbo_DocGia_Choose.Location = new System.Drawing.Point(632, 161);
-            this.cbo_DocGia_Choose.Name = "cbo_DocGia_Choose";
-            this.cbo_DocGia_Choose.Size = new System.Drawing.Size(530, 39);
-            this.cbo_DocGia_Choose.TabIndex = 51;
+            this.btn_PM_Update.Click += new System.EventHandler(this.btn_PM_Update_Click);
             // 
             // txt_GhiChuPM_Enter
             // 
@@ -169,6 +150,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_PM_Add.TabIndex = 38;
             this.btn_PM_Add.Text = "Thêm";
             this.btn_PM_Add.UseVisualStyleBackColor = true;
+            this.btn_PM_Add.Click += new System.EventHandler(this.btn_PM_Add_Click);
             // 
             // dgv_PM_Enter
             // 
@@ -179,6 +161,7 @@ namespace He_thong_quan_ly_thu_vien
             this.dgv_PM_Enter.RowTemplate.Height = 24;
             this.dgv_PM_Enter.Size = new System.Drawing.Size(1119, 420);
             this.dgv_PM_Enter.TabIndex = 48;
+            this.dgv_PM_Enter.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_PM_Enter_CellClick);
             // 
             // txt_NgayTra_Enter
             // 
@@ -274,8 +257,6 @@ namespace He_thong_quan_ly_thu_vien
             this.Controls.Add(this.btn_PM_Watch);
             this.Controls.Add(this.btn_PM_Delete);
             this.Controls.Add(this.btn_PM_Update);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbo_DocGia_Choose);
             this.Controls.Add(this.txt_GhiChuPM_Enter);
             this.Controls.Add(this.txt_TenSach_Enter);
             this.Controls.Add(this.label1);
@@ -295,6 +276,7 @@ namespace He_thong_quan_ly_thu_vien
             this.Name = "Form_PhieuMuon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PHIẾU MƯỢN";
+            this.Load += new System.EventHandler(this.Form_PhieuMuon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PM_Enter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -308,8 +290,6 @@ namespace He_thong_quan_ly_thu_vien
         private System.Windows.Forms.Button btn_PM_Watch;
         private System.Windows.Forms.Button btn_PM_Delete;
         private System.Windows.Forms.Button btn_PM_Update;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbo_DocGia_Choose;
         private System.Windows.Forms.TextBox txt_GhiChuPM_Enter;
         private System.Windows.Forms.TextBox txt_TenSach_Enter;
         private System.Windows.Forms.Label label1;

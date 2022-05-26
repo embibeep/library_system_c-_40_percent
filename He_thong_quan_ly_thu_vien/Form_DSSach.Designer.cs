@@ -46,7 +46,6 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_DSSach_Update = new System.Windows.Forms.Button();
             this.btn_DSSach_Delete = new System.Windows.Forms.Button();
             this.btn_DSSach_Watch = new System.Windows.Forms.Button();
-            this.btn_DSSach_Report = new System.Windows.Forms.Button();
             this.btn_DSSach_Exit = new System.Windows.Forms.Button();
             this.cbo_TheLoai_Choose = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -186,7 +185,7 @@ namespace He_thong_quan_ly_thu_vien
             // btn_DSSach_Update
             // 
             this.btn_DSSach_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DSSach_Update.Location = new System.Drawing.Point(237, 648);
+            this.btn_DSSach_Update.Location = new System.Drawing.Point(285, 648);
             this.btn_DSSach_Update.Name = "btn_DSSach_Update";
             this.btn_DSSach_Update.Size = new System.Drawing.Size(150, 44);
             this.btn_DSSach_Update.TabIndex = 8;
@@ -197,7 +196,7 @@ namespace He_thong_quan_ly_thu_vien
             // btn_DSSach_Delete
             // 
             this.btn_DSSach_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DSSach_Delete.Location = new System.Drawing.Point(430, 648);
+            this.btn_DSSach_Delete.Location = new System.Drawing.Point(526, 648);
             this.btn_DSSach_Delete.Name = "btn_DSSach_Delete";
             this.btn_DSSach_Delete.Size = new System.Drawing.Size(150, 44);
             this.btn_DSSach_Delete.TabIndex = 9;
@@ -208,7 +207,7 @@ namespace He_thong_quan_ly_thu_vien
             // btn_DSSach_Watch
             // 
             this.btn_DSSach_Watch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DSSach_Watch.Location = new System.Drawing.Point(623, 648);
+            this.btn_DSSach_Watch.Location = new System.Drawing.Point(767, 648);
             this.btn_DSSach_Watch.Name = "btn_DSSach_Watch";
             this.btn_DSSach_Watch.Size = new System.Drawing.Size(150, 44);
             this.btn_DSSach_Watch.TabIndex = 10;
@@ -216,21 +215,10 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_DSSach_Watch.UseVisualStyleBackColor = true;
             this.btn_DSSach_Watch.Click += new System.EventHandler(this.btn_DSSach_Watch_Click);
             // 
-            // btn_DSSach_Report
-            // 
-            this.btn_DSSach_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DSSach_Report.Location = new System.Drawing.Point(816, 648);
-            this.btn_DSSach_Report.Name = "btn_DSSach_Report";
-            this.btn_DSSach_Report.Size = new System.Drawing.Size(150, 44);
-            this.btn_DSSach_Report.TabIndex = 11;
-            this.btn_DSSach_Report.Text = "In";
-            this.btn_DSSach_Report.UseVisualStyleBackColor = true;
-            this.btn_DSSach_Report.Click += new System.EventHandler(this.btn_DSSach_Report_Click);
-            // 
             // btn_DSSach_Exit
             // 
             this.btn_DSSach_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DSSach_Exit.Location = new System.Drawing.Point(1009, 647);
+            this.btn_DSSach_Exit.Location = new System.Drawing.Point(1008, 647);
             this.btn_DSSach_Exit.Name = "btn_DSSach_Exit";
             this.btn_DSSach_Exit.Size = new System.Drawing.Size(150, 44);
             this.btn_DSSach_Exit.TabIndex = 12;
@@ -265,7 +253,6 @@ namespace He_thong_quan_ly_thu_vien
             this.ClientSize = new System.Drawing.Size(1200, 703);
             this.ControlBox = false;
             this.Controls.Add(this.btn_DSSach_Exit);
-            this.Controls.Add(this.btn_DSSach_Report);
             this.Controls.Add(this.btn_DSSach_Watch);
             this.Controls.Add(this.btn_DSSach_Delete);
             this.Controls.Add(this.btn_DSSach_Update);
@@ -315,7 +302,6 @@ namespace He_thong_quan_ly_thu_vien
         private System.Windows.Forms.Button btn_DSSach_Update;
         private System.Windows.Forms.Button btn_DSSach_Delete;
         private System.Windows.Forms.Button btn_DSSach_Watch;
-        private System.Windows.Forms.Button btn_DSSach_Report;
         private System.Windows.Forms.Button btn_DSSach_Exit;
         private System.Windows.Forms.ComboBox cbo_TheLoai_Choose;
         private System.Windows.Forms.Label label7;

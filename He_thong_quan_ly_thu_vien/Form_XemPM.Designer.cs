@@ -30,8 +30,6 @@ namespace He_thong_quan_ly_thu_vien
         private void InitializeComponent()
         {
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbo_DocGia_Choose = new System.Windows.Forms.ComboBox();
             this.txt_GhiChuPM_Watch = new System.Windows.Forms.TextBox();
             this.txt_TenSach_Watch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,25 +58,6 @@ namespace He_thong_quan_ly_thu_vien
             this.label8.Size = new System.Drawing.Size(119, 32);
             this.label8.TabIndex = 75;
             this.label8.Text = "Ghi Chú";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(397, 164);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(192, 32);
-            this.label7.TabIndex = 74;
-            this.label7.Text = "Chọn Độc Giả";
-            // 
-            // cbo_DocGia_Choose
-            // 
-            this.cbo_DocGia_Choose.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_DocGia_Choose.FormattingEnabled = true;
-            this.cbo_DocGia_Choose.Location = new System.Drawing.Point(632, 161);
-            this.cbo_DocGia_Choose.Name = "cbo_DocGia_Choose";
-            this.cbo_DocGia_Choose.Size = new System.Drawing.Size(530, 39);
-            this.cbo_DocGia_Choose.TabIndex = 73;
             // 
             // txt_GhiChuPM_Watch
             // 
@@ -125,6 +104,7 @@ namespace He_thong_quan_ly_thu_vien
             this.dgv_XemPM_Enter.RowTemplate.Height = 24;
             this.dgv_XemPM_Enter.Size = new System.Drawing.Size(1119, 420);
             this.dgv_XemPM_Enter.TabIndex = 70;
+            this.dgv_XemPM_Enter.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_XemPM_Enter_CellClick);
             // 
             // txt_NgayTra_Watch
             // 
@@ -240,8 +220,6 @@ namespace He_thong_quan_ly_thu_vien
             this.Controls.Add(this.btn_XemPM_Report);
             this.Controls.Add(this.btn_XemPM_Enter);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbo_DocGia_Choose);
             this.Controls.Add(this.txt_GhiChuPM_Watch);
             this.Controls.Add(this.txt_TenSach_Watch);
             this.Controls.Add(this.label1);
@@ -260,6 +238,7 @@ namespace He_thong_quan_ly_thu_vien
             this.Name = "Form_XemPM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XEM PHIẾU MƯỢN";
+            this.Load += new System.EventHandler(this.Form_XemPM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_XemPM_Enter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -269,8 +248,6 @@ namespace He_thong_quan_ly_thu_vien
         #endregion
 
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbo_DocGia_Choose;
         private System.Windows.Forms.TextBox txt_GhiChuPM_Watch;
         private System.Windows.Forms.TextBox txt_TenSach_Watch;
         private System.Windows.Forms.Label label1;

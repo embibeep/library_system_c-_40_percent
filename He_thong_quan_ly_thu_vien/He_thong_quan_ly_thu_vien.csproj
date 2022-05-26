@@ -58,10 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet_Sach.Designer.cs">
+    <Compile Include="DataSet_PM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet_Sach.xsd</DependentUpon>
+      <DependentUpon>DataSet_PM.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form_DocGia.cs">
       <SubType>Form</SubType>
@@ -93,11 +93,11 @@
     <Compile Include="Form_PhieuMuon.Designer.cs">
       <DependentUpon>Form_PhieuMuon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Report_Sach.cs">
+    <Compile Include="Form_Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Report_Sach.Designer.cs">
-      <DependentUpon>Form_Report_Sach.cs</DependentUpon>
+    <Compile Include="Form_Report.Designer.cs">
+      <DependentUpon>Form_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_TheLoai.cs">
       <SubType>Form</SubType>
@@ -119,12 +119,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rpt_Sach.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpt_Sach.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="SQlConnection.cs" />
     <EmbeddedResource Include="Form_DocGia.resx">
       <DependentUpon>Form_DocGia.cs</DependentUpon>
@@ -141,8 +135,8 @@
     <EmbeddedResource Include="Form_PhieuMuon.resx">
       <DependentUpon>Form_PhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Report_Sach.resx">
-      <DependentUpon>Form_Report_Sach.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Report.resx">
+      <DependentUpon>Form_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_TheLoai.resx">
       <DependentUpon>Form_TheLoai.cs</DependentUpon>
@@ -162,20 +156,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="rpt_Sach.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_Sach.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="DataSet_Sach.xsc">
-      <DependentUpon>DataSet_Sach.xsd</DependentUpon>
+    <None Include="DataSet_PM.xsc">
+      <DependentUpon>DataSet_PM.xsd</DependentUpon>
     </None>
-    <None Include="DataSet_Sach.xsd">
+    <None Include="DataSet_PM.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet_Sach.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet_PM.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSet_Sach.xss">
-      <DependentUpon>DataSet_Sach.xsd</DependentUpon>
+    <None Include="DataSet_PM.xss">
+      <DependentUpon>DataSet_PM.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

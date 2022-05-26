@@ -70,9 +70,8 @@ namespace He_thong_quan_ly_thu_vien
                 SqlConnection Connection1 = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
                 string Scon;
                 Connection1.Open();
-                Scon = "insert into TheLoai (MaTL,TenTL,MoTa,GhiChu) values(@MaTL,@TenTL,@MoTa,@GhiChu)";
+                Scon = "insert into TheLoai (TenTL,MoTa,GhiChu) values(@TenTL,@MoTa,@GhiChu)";
                 SqlCommand cmd1 = new SqlCommand(Scon, Connection1);
-                cmd1.Parameters.Add("@MaTL", txt_MaTL_Enter.Text);
                 cmd1.Parameters.Add("@TenTL", txt_TenTL_Enter.Text);
                 cmd1.Parameters.Add("@MoTa",  txt_MoTa_Enter.Text);
                 cmd1.Parameters.Add("@GhiChu", txt_GhiChu_Enter.Text);
