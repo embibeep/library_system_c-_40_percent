@@ -24,7 +24,7 @@ namespace He_thong_quan_ly_thu_vien
 
         private void btn_InReport_Click(object sender, EventArgs e)
         {
-            Global.Ma = txt_MaPM.Text;
+            Global.Ma = int.Parse(txt_MaPM.Text.ToString());
             Form_Report frm_Report = new Form_Report();
             frm_Report.ShowDialog();
         }

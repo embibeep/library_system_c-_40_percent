@@ -56,8 +56,8 @@ namespace He_thong_quan_ly_thu_vien
             {
                 //các thuộc tính trong ngoặc vuông có thể thay đổi tùy theo tên biến trong database.
                 txt_MaPM_Enter.Text = dgv_PM_Enter.CurrentRow.Cells["MaPM"].Value.ToString();
-                txt_TenDG_Enter.Text = dgv_PM_Enter.CurrentRow.Cells["TenDG"].Value.ToString();
-                txt_TenSach_Enter.Text = dgv_PM_Enter.CurrentRow.Cells["TenSach"].Value.ToString();
+                txt_TenDG_Enter.Text = dgv_PM_Enter.CurrentRow.Cells["MaDG"].Value.ToString();
+                txt_TenSach_Enter.Text = dgv_PM_Enter.CurrentRow.Cells["IDSach"].Value.ToString();
                 txt_NgayMuon_Enter.Text = dgv_PM_Enter.CurrentRow.Cells["NgayMuon"].Value.ToString();
                 txt_NgayTra_Enter.Text = dgv_PM_Enter.CurrentRow.Cells["NgayTra"].Value.ToString();
                 txt_GhiChuPM_Enter.Text = dgv_PM_Enter.CurrentRow.Cells["GhiChu"].Value.ToString();
@@ -76,11 +76,11 @@ namespace He_thong_quan_ly_thu_vien
                 SqlConnection Connection1 = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
                 string Scon;
                 Connection1.Open();
-                Scon = "insert into PhieuMuon (MaPM,TenDG,TenSach,NgayMuon,NgayTra,GhiChu) values(@MaPM,@TenDG,@TenSach,@NgayMuon,@NgayTra,@GhiChu)";
+                Scon = "insert into PhieuMuon (MaPM,MaDG,IDSach,NgayMuon,NgayTra,GhiChu) values(@MaPM,@MaDG,@IDSach,@NgayMuon,@NgayTra,@GhiChu)";
                 SqlCommand cmd1 = new SqlCommand(Scon, Connection1);
                 cmd1.Parameters.Add("@MaPM", txt_MaPM_Enter.Text);
-                cmd1.Parameters.Add("@TenDG", txt_TenDG_Enter.Text);
-                cmd1.Parameters.Add("@TenSach", txt_TenSach_Enter.Text);
+                cmd1.Parameters.Add("@MaDG", txt_TenDG_Enter.Text);
+                cmd1.Parameters.Add("@IDSach", txt_TenSach_Enter.Text);
                 cmd1.Parameters.Add("@NgayMuon", txt_NgayMuon_Enter.Text);
                 cmd1.Parameters.Add("@NgayTra", txt_NgayTra_Enter.Text);
                 cmd1.Parameters.Add("@GhiChu", txt_GhiChuPM_Enter.Text);

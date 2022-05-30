@@ -61,8 +61,8 @@ namespace He_thong_quan_ly_thu_vien
             {
                 //các thuộc tính trong ngoặc vuông có thể thay đổi tùy theo tên biến trong database.
                 txt_MaPM_Watch.Text = dgv_XemPM_Enter.CurrentRow.Cells["MaPM"].Value.ToString();
-                txt_TenDG_Watch.Text = dgv_XemPM_Enter.CurrentRow.Cells["TenDG"].Value.ToString();
-                txt_TenSach_Watch.Text = dgv_XemPM_Enter.CurrentRow.Cells["TenSach"].Value.ToString();
+                txt_TenDG_Watch.Text = dgv_XemPM_Enter.CurrentRow.Cells["MaDG"].Value.ToString();
+                txt_TenSach_Watch.Text = dgv_XemPM_Enter.CurrentRow.Cells["IDSach"].Value.ToString();
                 txt_NgayMuon_Watch.Text = dgv_XemPM_Enter.CurrentRow.Cells["NgayMuon"].Value.ToString();
                 txt_NgayTra_Watch.Text = dgv_XemPM_Enter.CurrentRow.Cells["NgayTra"].Value.ToString();
                 txt_GhiChuPM_Watch.Text = dgv_XemPM_Enter.CurrentRow.Cells["GhiChu"].Value.ToString();

@@ -42,11 +42,11 @@ namespace He_thong_quan_ly_thu_vien
             }
         }
 
-        private void Tao_Report(string MaPM)
+        private void Tao_Report(int MaPM)
         {
             cmd = new SqlCommand("sp_rptPM", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@MaPM", SqlDbType.NVarChar).Value = MaPM;
+            cmd.Parameters.Add("@MaPM", SqlDbType.Int).Value = MaPM;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

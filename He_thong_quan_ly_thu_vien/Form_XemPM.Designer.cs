@@ -91,9 +91,9 @@ namespace He_thong_quan_ly_thu_vien
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(38, 115);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 32);
+            this.label4.Size = new System.Drawing.Size(126, 32);
             this.label4.TabIndex = 71;
-            this.label4.Text = "Tên Sách";
+            this.label4.Text = "Mã Sách";
             // 
             // dgv_XemPM_Enter
             // 
@@ -164,9 +164,9 @@ namespace He_thong_quan_ly_thu_vien
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(38, 60);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 32);
+            this.label3.Size = new System.Drawing.Size(163, 32);
             this.label3.TabIndex = 67;
-            this.label3.Text = "Tên Độc Giả";
+            this.label3.Text = "Mã Độc Giả";
             // 
             // label2
             // 

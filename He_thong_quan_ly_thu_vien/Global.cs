@@ -8,6 +8,6 @@ namespace He_thong_quan_ly_thu_vien
 {
     class Global
     {
-        public static string Ma;
+        public static int Ma;
     }
 }

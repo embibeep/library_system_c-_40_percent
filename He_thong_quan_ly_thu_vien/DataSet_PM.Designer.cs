@@ -279,7 +279,7 @@ namespace He_thong_quan_ly_thu_vien {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class sp_rptPMDataTable : global::System.Data.TypedTableBase<sp_rptPMRow> {
             
-            private global::System.Data.DataColumn columnMaPM;
+            private global::System.Data.DataColumn columnSTT;
             
             private global::System.Data.DataColumn columnTenDG;
             
@@ -326,9 +326,9 @@ namespace He_thong_quan_ly_thu_vien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MaPMColumn {
+            public global::System.Data.DataColumn STTColumn {
                 get {
-                    return this.columnMaPM;
+                    return this.columnSTT;
                 }
             }
             
@@ -409,10 +409,10 @@ namespace He_thong_quan_ly_thu_vien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sp_rptPMRow Addsp_rptPMRow(string MaPM, string TenDG, string TenSach, string NgayMuon, string NgayTra, string GhiChu) {
+            public sp_rptPMRow Addsp_rptPMRow(short STT, string TenDG, string TenSach, string NgayMuon, string NgayTra, string GhiChu) {
                 sp_rptPMRow rowsp_rptPMRow = ((sp_rptPMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        MaPM,
+                        STT,
                         TenDG,
                         TenSach,
                         NgayMuon,
@@ -440,7 +440,7 @@ namespace He_thong_quan_ly_thu_vien {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnMaPM = base.Columns["MaPM"];
+                this.columnSTT = base.Columns["STT"];
                 this.columnTenDG = base.Columns["TenDG"];
                 this.columnTenSach = base.Columns["TenSach"];
                 this.columnNgayMuon = base.Columns["NgayMuon"];
@@ -451,8 +451,8 @@ namespace He_thong_quan_ly_thu_vien {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnMaPM = new global::System.Data.DataColumn("MaPM", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMaPM);
+                this.columnSTT = new global::System.Data.DataColumn("STT", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSTT);
                 this.columnTenDG = new global::System.Data.DataColumn("TenDG", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTenDG);
                 this.columnTenSach = new global::System.Data.DataColumn("TenSach", typeof(string), null, global::System.Data.MappingType.Element);
@@ -605,17 +605,17 @@ namespace He_thong_quan_ly_thu_vien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string MaPM {
+            public short STT {
                 get {
                     try {
-                        return ((string)(this[this.tablesp_rptPM.MaPMColumn]));
+                        return ((short)(this[this.tablesp_rptPM.STTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MaPM\' in table \'sp_rptPM\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'STT\' in table \'sp_rptPM\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_rptPM.MaPMColumn] = value;
+                    this[this.tablesp_rptPM.STTColumn] = value;
                 }
             }
             
@@ -701,14 +701,14 @@ namespace He_thong_quan_ly_thu_vien {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsMaPMNull() {
-                return this.IsNull(this.tablesp_rptPM.MaPMColumn);
+            public bool IsSTTNull() {
+                return this.IsNull(this.tablesp_rptPM.STTColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetMaPMNull() {
-                this[this.tablesp_rptPM.MaPMColumn] = global::System.Convert.DBNull;
+            public void SetSTTNull() {
+                this[this.tablesp_rptPM.STTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
