@@ -72,6 +72,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_PM_Report.TabIndex = 42;
             this.btn_PM_Report.Text = "In";
             this.btn_PM_Report.UseVisualStyleBackColor = true;
+            this.btn_PM_Report.Click += new System.EventHandler(this.btn_PM_Report_Click);
             // 
             // btn_PM_Watch
             // 

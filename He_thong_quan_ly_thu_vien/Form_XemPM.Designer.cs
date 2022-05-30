@@ -198,6 +198,7 @@ namespace He_thong_quan_ly_thu_vien
             this.btn_XemPM_Report.TabIndex = 8;
             this.btn_XemPM_Report.Text = "In";
             this.btn_XemPM_Report.UseVisualStyleBackColor = true;
+            this.btn_XemPM_Report.Click += new System.EventHandler(this.btn_XemPM_Report_Click);
             // 
             // btn_XemPM_Enter
             // 

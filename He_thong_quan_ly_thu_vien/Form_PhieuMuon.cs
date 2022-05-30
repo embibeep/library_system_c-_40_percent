@@ -117,5 +117,11 @@ namespace He_thong_quan_ly_thu_vien
             int hientai = this.BindingContext[ds, "Phieumuon"].Position;
             this.BindingContext[ds, "Phieumuon"].RemoveAt(hientai);
         }
+
+        private void btn_PM_Report_Click(object sender, EventArgs e)
+        {
+            Form_ChonReport frm_ChonReport = new Form_ChonReport();
+            frm_ChonReport.ShowDialog();
+        }
     }
 }

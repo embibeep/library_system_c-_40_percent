@@ -71,3 +71,5 @@ E:\nam3\sql\bai 40\library_system_c-_40_percent\He_thong_quan_ly_thu_vien\obj\De
 E:\nam3\sql\bai 40\library_system_c-_40_percent\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.csproj.CopyComplete
 E:\nam3\sql\bai 40\library_system_c-_40_percent\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.exe
 E:\nam3\sql\bai 40\library_system_c-_40_percent\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.pdb
+E:\nam3\sql\bai 40\library_system_c-_40_percent\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.Form_Report.resources
+E:\nam3\sql\bai 40\library_system_c-_40_percent\He_thong_quan_ly_thu_vien\obj\Debug\He_thong_quan_ly_thu_vien.Form_ChonReport.resources

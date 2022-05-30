@@ -68,5 +68,11 @@ namespace He_thong_quan_ly_thu_vien
                 txt_GhiChuPM_Watch.Text = dgv_XemPM_Enter.CurrentRow.Cells["GhiChu"].Value.ToString();
             }
         }
+
+        private void btn_XemPM_Report_Click(object sender, EventArgs e)
+        {
+            Form_ChonReport frm_ChonReport = new Form_ChonReport();
+            frm_ChonReport.ShowDialog();
+        }
     }
 }

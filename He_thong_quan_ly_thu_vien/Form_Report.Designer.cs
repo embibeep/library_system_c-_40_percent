@@ -29,19 +29,36 @@ namespace He_thong_quan_ly_thu_vien
         /// </summary>
         private void InitializeComponent()
         {
+            this.rptReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
+            // 
+            // rptReportViewer
+            // 
+            this.rptReportViewer.ActiveViewIndex = -1;
+            this.rptReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rptReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rptReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptReportViewer.Location = new System.Drawing.Point(0, 0);
+            this.rptReportViewer.Name = "rptReportViewer";
+            this.rptReportViewer.Size = new System.Drawing.Size(1035, 555);
+            this.rptReportViewer.TabIndex = 0;
             // 
             // Form_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 503);
+            this.ClientSize = new System.Drawing.Size(1035, 555);
+            this.Controls.Add(this.rptReportViewer);
             this.Name = "Form_Report";
-            this.Text = "Form_Report";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Report";
+            this.Load += new System.EventHandler(this.Form_Report_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer rptReportViewer;
     }
 }
