@@ -40,8 +40,8 @@ namespace He_thong_quan_ly_thu_vien
         private void Connection()
         {
             //dgv_TheLoai_Enter.Rows.Clear();
-            SqlConnection Connection = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
-            cmd = new SqlCommand("Select * From TheLoai", Connection);
+            //SqlConnection Connection = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
+            cmd = new SqlCommand("Select * From TheLoai", ChuoiKetNoi.Connect());
             da = new SqlDataAdapter(cmd);
             cmb = new SqlCommandBuilder(da);
             ds = new DataSet();
@@ -67,11 +67,11 @@ namespace He_thong_quan_ly_thu_vien
         {
             //try
             {
-                SqlConnection Connection1 = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
+                //SqlConnection Connection1 = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
+                //Connection1.Open();
                 string Scon;
-                Connection1.Open();
                 Scon = "insert into TheLoai (TenTL,MoTa,GhiChu) values(@TenTL,@MoTa,@GhiChu)";
-                SqlCommand cmd1 = new SqlCommand(Scon, Connection1);
+                SqlCommand cmd1 = new SqlCommand(Scon, ChuoiKetNoi.Connect());
                 cmd1.Parameters.Add("@TenTL", txt_TenTL_Enter.Text);
                 cmd1.Parameters.Add("@MoTa",  txt_MoTa_Enter.Text);
                 cmd1.Parameters.Add("@GhiChu", txt_GhiChu_Enter.Text);
@@ -81,7 +81,7 @@ namespace He_thong_quan_ly_thu_vien
                     
                     Connection();
                 }
-                Connection1.Close();
+                //Connection1.Close();
             }
             //catch (Exception Exception)
             //{
@@ -100,7 +100,7 @@ namespace He_thong_quan_ly_thu_vien
             else
             {         
                 da.Update(ds,"TheLoai");
-                MessageBox.Show("Có" + tbl.Rows.Count + " danh sách đã được cập nhật!");
+                MessageBox.Show("Có " + tbl.Rows.Count + " danh sách đã được cập nhật!");
             }
         }
 

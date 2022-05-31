@@ -28,8 +28,8 @@ namespace He_thong_quan_ly_thu_vien
         private void Connection()
         {
             //dgv_DocGia_Enter.Rows.Clear();
-            SqlConnection Connection = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
-            cmd = new SqlCommand("Select * From PhieuMuon", Connection);
+            //SqlConnection Connection = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
+            cmd = new SqlCommand("Select * From PhieuMuon", ChuoiKetNoi.Connect());
             da = new SqlDataAdapter(cmd);
             cmb = new SqlCommandBuilder(da);
             ds = new DataSet();
@@ -73,11 +73,11 @@ namespace He_thong_quan_ly_thu_vien
         {
             try
             {
-                SqlConnection Connection1 = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
+                //SqlConnection Connection1 = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
+                //Connection1.Open();
                 string Scon;
-                Connection1.Open();
                 Scon = "insert into PhieuMuon (MaPM,MaDG,IDSach,NgayMuon,NgayTra,GhiChu) values(@MaPM,@MaDG,@IDSach,@NgayMuon,@NgayTra,@GhiChu)";
-                SqlCommand cmd1 = new SqlCommand(Scon, Connection1);
+                SqlCommand cmd1 = new SqlCommand(Scon, ChuoiKetNoi.Connect());
                 cmd1.Parameters.Add("@MaPM", txt_MaPM_Enter.Text);
                 cmd1.Parameters.Add("@MaDG", txt_TenDG_Enter.Text);
                 cmd1.Parameters.Add("@IDSach", txt_TenSach_Enter.Text);
@@ -89,7 +89,7 @@ namespace He_thong_quan_ly_thu_vien
                     MessageBox.Show("Thêm thành công!");
                     Connection();
                 }
-                Connection1.Close();
+                //Connection1.Close();
             }
             catch (Exception Exception)
             {
@@ -108,7 +108,7 @@ namespace He_thong_quan_ly_thu_vien
             else
             {
                 da.Update(ds, "PhieuMuon");
-                MessageBox.Show("Có" + tbl.Rows.Count + " danh sách đã được cập nhật!");
+                MessageBox.Show("Có " + tbl.Rows.Count + " danh sách đã được cập nhật!");
             }
         }
 

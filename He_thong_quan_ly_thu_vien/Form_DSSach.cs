@@ -42,7 +42,7 @@ namespace He_thong_quan_ly_thu_vien
             this.Close();
         }
         private void ketnoi() {
-            SqlCommand cmd = new SqlCommand("select * from TheLoai", Connection());
+            SqlCommand cmd = new SqlCommand("select * from TheLoai", ChuoiKetNoi.Connect());
             da = new SqlDataAdapter(cmd);
        
             ds = new DataSet();
@@ -82,11 +82,11 @@ namespace He_thong_quan_ly_thu_vien
         {
             try
             {
-                SqlConnection Connection1 = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
+                //SqlConnection Connection1 = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
+                //Connection1.Open();
                 string Scon;
-                Connection1.Open();
                 Scon = "insert into Sach (TenSach,MoTa,Gia,NgayLap,MaTL) values(@TenSach,@MoTa,@Gia,@NgayLap,@MaTL)";
-                SqlCommand cmd1 = new SqlCommand(Scon, Connection1);
+                SqlCommand cmd1 = new SqlCommand(Scon, ChuoiKetNoi.Connect());
                 cmd1.Parameters.Add("@TenSach", txt_TenSach_Enter.Text);
                 cmd1.Parameters.Add("@MoTa", txt_MoTa_Enter.Text);
                 cmd1.Parameters.Add("@Gia", txt_Gia_Enter.Text);
@@ -98,7 +98,7 @@ namespace He_thong_quan_ly_thu_vien
 
                     ketnoi();
                 }
-                Connection1.Close();
+                //Connection1.Close();
             }
             catch (Exception Exception)
             {

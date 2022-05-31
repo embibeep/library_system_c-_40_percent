@@ -1,0 +1,1 @@
+server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true

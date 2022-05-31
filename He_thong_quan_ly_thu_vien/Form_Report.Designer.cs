@@ -40,14 +40,14 @@ namespace He_thong_quan_ly_thu_vien
             this.rptReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rptReportViewer.Location = new System.Drawing.Point(0, 0);
             this.rptReportViewer.Name = "rptReportViewer";
-            this.rptReportViewer.Size = new System.Drawing.Size(1035, 555);
+            this.rptReportViewer.Size = new System.Drawing.Size(1226, 692);
             this.rptReportViewer.TabIndex = 0;
             // 
             // Form_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 555);
+            this.ClientSize = new System.Drawing.Size(1226, 692);
             this.Controls.Add(this.rptReportViewer);
             this.Name = "Form_Report";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

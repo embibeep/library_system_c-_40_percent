@@ -35,7 +35,7 @@ namespace He_thong_quan_ly_thu_vien
 
         private void ketnoi()
         {
-            SqlCommand cmd = new SqlCommand("select * from TheLoai", Connection());
+            SqlCommand cmd = new SqlCommand("select * from TheLoai", ChuoiKetNoi.Connect());
             da = new SqlDataAdapter(cmd);
 
             ds = new DataSet();

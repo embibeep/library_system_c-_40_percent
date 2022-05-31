@@ -29,7 +29,7 @@ namespace He_thong_quan_ly_thu_vien
         {
             //dgv_DocGia_Enter.Rows.Clear();
             SqlConnection Connection = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
-            cmd = new SqlCommand("Select * From PhieuMuon", Connection);
+            cmd = new SqlCommand("Select * From PhieuMuon", ChuoiKetNoi.Connect());
             da = new SqlDataAdapter(cmd);
             cmb = new SqlCommandBuilder(da);
             ds = new DataSet();
