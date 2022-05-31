@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChuoiKetNoi.cs" />
     <Compile Include="DataSet_PM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

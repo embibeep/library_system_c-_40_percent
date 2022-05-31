@@ -44,15 +44,22 @@ namespace He_thong_quan_ly_thu_vien
 
         private void Tao_Report(int MaPM)
         {
-            cmd = new SqlCommand("sp_rptPM", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@MaPM", SqlDbType.Int).Value = MaPM;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            rpt_PM rpt = new rpt_PM();
-            rpt.SetDataSource(dt);
-            rptReportViewer.ReportSource = rpt;
+            try
+            {
+                cmd = new SqlCommand("sp_rptPM", cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@MaPM", SqlDbType.Int).Value = MaPM;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                rpt_PM rpt = new rpt_PM();
+                rpt.SetDataSource(dt);
+                rptReportViewer.ReportSource = rpt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Mã Phiếu Mượn không hợp lệ!");
+            }
         }
 
         private void Form_Report_Load(object sender, EventArgs e)

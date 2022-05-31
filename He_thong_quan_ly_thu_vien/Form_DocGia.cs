@@ -66,7 +66,7 @@ namespace He_thong_quan_ly_thu_vien
                 string Scon;
                 Connection1.Open();
                 Scon = "insert into DocGia (MaDG,TenDG,EmailDG,DiaChiDG,SdtDG,NgayLap) values(@MaDG,@TenDG,@EmailDG,@DiaChiDG,@SdtDG,@NgayLap)";
-                SqlCommand cmd1 = new SqlCommand(Scon, Connection1);
+                SqlCommand cmd1 = new SqlCommand(Scon, ChuoiKetNoi.Connection);
                 cmd1.Parameters.Add("@MaDG", txt_MaDG_Enter.Text);
                 cmd1.Parameters.Add("@TenDG", txt_TenDG_Enter.Text);
                 cmd1.Parameters.Add("@EmailDG", txt_EmailDG_Enter.Text);

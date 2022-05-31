@@ -21,32 +21,34 @@ namespace He_thong_quan_ly_thu_vien
         }
 
         private void Btn_Login_Access_Click(object sender, EventArgs e)
-        {
-            String connectionstring;
-            SqlConnection cnn;
-            connectionstring = "Server=.;Database=19CT3_42_D10;Uid=trongngoc;PWD=06122001";
-            cnn = new SqlConnection(connectionstring);
-            {
-                try
-                {
-                    connectionstring = @"Server=ADMIN\SQLEXPRESS";
-                    connectionstring += @";database=19CT3_42_D10";
-                    connectionstring += ";uid=" + txt_Login_Account.Text;
-                    connectionstring += ";pwd=" + txt_Login_Password.Text;
-                    cnn.ConnectionString = connectionstring;
+        { 
 
-                    cnn.Open();
-                    MessageBox.Show("Kết nối thành công");
-                    cnn.Close();
-                    Form_Menu frm_Menu = new Form_Menu();
-                    frm_Menu.ShowDialog();
-                }
-                catch (Exception ex)
+            try
+            {
+                string tk = txt_Login_Account.Text;
+                string mk = txt_Login_Password.Text;
+                string sql = "select * from Account where Username = '" + tk + "'and Password ='" + mk + "'";
+                //SqlConnection cnn = new SqlConnection(@"server=ADMIN\SQLEXPRESS;database=19CT3_42_D10;integrated security=true");
+                //cnn.Open();
+                SqlCommand cmd = new SqlCommand(sql, ChuoiKetNoi.Connection);
+                SqlDataReader dta = cmd.ExecuteReader();
+                if (dta.Read() == true)
                 {
-                    MessageBox.Show("Lỗi kết nối\n" + ex.Message);
+                    MessageBox.Show("Đăng nhập thành công!");
+                    Form_Menu frm_Menu = new Form_Menu();
+                    this.Hide();
+                    frm_Menu.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập thất bại!");
                 }
             }
-
+             catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi kết nối!");
+            }
         }
 
         private void btn_Login_Exit_Click(object sender, EventArgs e)

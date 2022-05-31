@@ -59,7 +59,9 @@ namespace He_thong_quan_ly_thu_vien
         private void btn_XemDS_Enter_Click(object sender, EventArgs e)
         {
             Form_DSSach frm_DSSach = new Form_DSSach();
+            this.Hide();
             frm_DSSach.ShowDialog();
+            this.Close();
         }
 
         private void btn_XemDS_Exit_Click(object sender, EventArgs e)

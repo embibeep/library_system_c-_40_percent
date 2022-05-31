@@ -45,7 +45,6 @@ namespace He_thong_quan_ly_thu_vien
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_Search = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_XemDS_Enter)).BeginInit();
             this.SuspendLayout();
@@ -200,23 +199,15 @@ namespace He_thong_quan_ly_thu_vien
             this.label2.TabIndex = 44;
             this.label2.Text = "Mã Sách";
             // 
-            // txt_Search
-            // 
-            this.txt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Search.Location = new System.Drawing.Point(214, 161);
-            this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(363, 38);
-            this.txt_Search.TabIndex = 53;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(38, 164);
+            this.label7.Location = new System.Drawing.Point(376, 164);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 32);
+            this.label7.Size = new System.Drawing.Size(201, 32);
             this.label7.TabIndex = 54;
-            this.label7.Text = "TÌm Kiếm";
+            this.label7.Text = "Chọn Thể Loại";
             // 
             // Form_XemDS
             // 
@@ -225,7 +216,6 @@ namespace He_thong_quan_ly_thu_vien
             this.ClientSize = new System.Drawing.Size(1200, 703);
             this.ControlBox = false;
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.btn_XemDS_Exit);
             this.Controls.Add(this.btn_XemDS_Enter);
             this.Controls.Add(this.cbo_TheLoai_Choose);
@@ -272,7 +262,6 @@ namespace He_thong_quan_ly_thu_vien
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_Search;
         private System.Windows.Forms.Label label7;
     }
 }
